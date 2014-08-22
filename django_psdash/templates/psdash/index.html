@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Starter Template for Bootstrap</title>
+    <title>Django ps-dash</title>
 
-    <!-- Bootstrap core CSS -->
-
-    <link rel="stylesheet" href="{% static "psdash/lib/css/bootstrap.min.css" %}"/>
-    <link rel="stylesheet" href="{% static "psdash/css/style.css" %}"/>
-    <!-- Custom styles for this template -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="{% static "psdash/css/style.min.css" %}">
+    <link rel="stylesheet" href="{% static "psdash/vendor/css/bootstrap.css" %}">
+    <!-- endinjector -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -119,11 +118,12 @@
 
     </div><!-- /.container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="{% static "psdash/lib/js/bootstrap.min.js" %}"></script>
+        <!-- injector:js -->
+        <script src="{% static "psdash/js/main.min.js" %}"></script>
+        <script src="{% static "psdash/vendor/js/backbone.js" %}"></script>
+        <script src="{% static "psdash/vendor/js/bootstrap.js" %}"></script>
+        <script src="{% static "psdash/vendor/js/jquery.js" %}"></script>
+        <script src="{% static "psdash/vendor/js/underscore.js" %}"></script>
+        <!-- endinjector -->
   </body>
 </html>

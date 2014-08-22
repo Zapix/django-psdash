@@ -66,3 +66,8 @@ docs/build/
 
 # Ignore vagrant files
 .vagrant/*
+
+#ignore nodejs setup
+node_modules/
+bower_components/
+django_psdash/static/psdash/

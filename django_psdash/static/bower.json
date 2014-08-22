@@ -1,0 +1,27 @@
+{
+  "name": "django-psdash-js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Zapix/django-psdash",
+  "description": "js files for django-psdash project",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Aleksandr Aibulatov"
+  ],
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "bootstrap": "~3.2.0",
+    "jquery": "~2.1.1",
+    "underscore": "~1.6.0"
+  }
+}
