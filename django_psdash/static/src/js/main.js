@@ -1,6 +1,6 @@
 function calcuateArray(callback){
   var a = [1, 2, 3, 4];
-  a.map(function(x){return x*x});
+  a.map(function(x){return x*x*x});
   callback(a);
 }
 

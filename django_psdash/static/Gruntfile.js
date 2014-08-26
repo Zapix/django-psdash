@@ -55,6 +55,13 @@ module.exports = function(grunt) {
                                              'psdash/**/*.css']
         }
       }
+    },
+    watch: {
+      scripts: {
+        files: ['src/js/*.js', 'src/css/*.css', 'bower_components/**/*.js',
+                'bower_components/**/*.css'],
+        tasks: ['uglify', 'cssmin', 'bower', 'injector']
+      }
     }
   });
 
@@ -62,6 +69,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower');
   grunt.loadNpmTasks('grunt-asset-injector');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['uglify', 'cssmin', 'bower', 'injector']);
 };
