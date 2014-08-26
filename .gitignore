@@ -71,3 +71,5 @@ docs/build/
 node_modules/
 bower_components/
 django_psdash/static/psdash/
+
+*.sqlite3
