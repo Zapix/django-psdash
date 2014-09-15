@@ -59,3 +59,17 @@ class MainViewTestCase(TestCase):
             'PSDASH_PERMISSION_CHECKER',
         )
 
+
+class GetCategoriesTestCase(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+        self.admin = User.objects.create_superuser(username='admin',
+                                                   email='admin@admin.ru',
+                                                   password='admin')
+
+    def test_ok(self):
+        self.client.login(username='admin', password='admin')
+        response = self.client.get(reverse('psdash_categories'))
+        self.assertEquals(response.status_code, 200)

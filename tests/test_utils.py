@@ -4,6 +4,7 @@ import inspect
 from django import test
 
 from django_psdash.utils import import_function
+from django_psdash.utils import check_settings
 
 
 class ImportFunctionTestCase(test.TestCase):
@@ -36,3 +37,43 @@ class ImportFunctionTestCase(test.TestCase):
         func = import_function('os.path.join')
 
         self.assertTrue(inspect.isfunction(func))
+
+
+class CheckCategoriesSettingsTestCase(test.TestCase):
+
+    def test_wrong_type(self):
+        with self.assertRaises(ValueError):
+            check_settings([1, 2, 3])
+
+    def test_wrong_item_of_categories(self):
+        with self.assertRaises(ValueError):
+            check_settings({'test': []})
+
+    def test_required_name_for_item(self):
+        with self.assertRaises(ValueError):
+            check_settings(
+                {
+                    'test': {
+                        'panels': []
+                    }
+                }
+            )
+
+    def test_required_panels_for_item(self):
+        with self.assertRaises(ValueError):
+            check_settings(
+                {
+                    'test': {
+                        'name': 'Test',
+                    }
+                }
+            )
+
+    def test_panels_should_be_a_list(self):
+        with self.assertRaises(ValueError):
+            check_settings({
+                'test': {
+                    'name': 'Test',
+                    'panels': 1
+                }
+            })
